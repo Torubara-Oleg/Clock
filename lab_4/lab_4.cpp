@@ -77,7 +77,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     }
 
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_LAB4));
-    SetTimer(hWnd, 1, 1000, Timer_Proc);
+    SetTimer(hWnd, 1, 1000, (TIMERPROC)Timer_Proc);
     MSG msg;
 
     // Цикл основного сообщения:
@@ -250,7 +250,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
             if (is_Killed)
             {
                 is_Killed = false;
-                SetTimer(hWnd, 1, 1000, Timer_Proc);
+                SetTimer(hWnd, 1, 1000, (TIMERPROC)Timer_Proc);
             }
             else
             {
